@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC
+"-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.kh.mohagee.member.model.vo.Member" alias="Member"/>
+		<typeAlias type="com.kh.mohagee.email.model.vo.Email" alias="Email"/>
+		<typeAlias type="com.kh.mohagee.showBoard.model.vo.ShowBoard" alias="ShowBoard" />
+ 		<typeAlias type="com.kh.mohagee.showBoard.model.vo.ShowAttachment" alias="ShowAttachment" />
+ 		<typeAlias type="com.kh.mohagee.showBoard.model.vo.sbComment" alias="sbComment"/>	
+		<typeAlias type="com.kh.mohagee.gymBoard.model.vo.GymBoard" alias="GymBoard"/>
+		<typeAlias type="com.kh.mohagee.gymBoard.model.vo.GymAttachment" alias="GymAttachment"/>
+		<typeAlias type="com.kh.mohagee.gymBoard.model.vo.gbComment" alias="gbComment"/>
+		<typeAlias type="com.kh.mohagee.travelBoard.model.vo.tbComment" alias="tbComment"/>	
+		<typeAlias type="com.kh.mohagee.travelBoard.model.vo.TravelBoard" alias="TravelBoard"/>
+        <typeAlias type="com.kh.mohagee.travelBoard.model.vo.TravelAttachment" alias="TravelAttachment"/>
+        <typeAlias type="com.kh.mohagee.member.model.vo.Profile" alias="Profile"/>
+		<typeAlias type="com.kh.mohagee.talkBoard.model.vo.TalkBoard" alias="Talk"/>
+		<typeAlias type="com.kh.mohagee.talkBoard.model.vo.TalkAttachment" alias="TalkAttachment"/>
+		<typeAlias type="com.kh.mohagee.favorite.model.vo.Favorite" alias="Favorite"/>
+		<typeAlias type="com.kh.mohagee.member.model.vo.FavoriteBoard" alias="FavoriteBoard"/>
+		<typeAlias type="com.kh.mohagee.talkBoard.model.vo.Tcomment" alias="tComment"/>
+	</typeAliases>
+
+</configuration>
+
+
+
+
+
+
+
+
+
+

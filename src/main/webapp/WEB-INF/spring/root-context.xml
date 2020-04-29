@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+	      destroy-method="close">
+	      <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+	      <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+	      <property name="username" value="MOHAGEE"/>
+	      <property name="password" value="MOHAGEE"/>
+	</bean>
+	
+	<!-- Mybatis 연동 -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" /> <!-- 사용할 DB 객체 등록 -->
+		<property name="mapperLocations" value="classpath*:mappers/*.xml"/>
+		<!-- SQL mapper 파일들을 모두 한번에 읽어와 관리한다. -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+	</bean>
+	
+	<!-- Mybatis로 Template 만들기 -->
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactoryBean"/>
+	</bean>
+	
+	<!-- 트랜잭션 처리를 스프링이 하도록 권한 인계하기! -->
+	<bean id="transactionManager"
+	      class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	      <property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- 트랜잭션 처리 방식 -->
+	<!-- 선언적 AOP 처리 방식(XML 방식) -->
+	<!-- 트랜잭션 처리를 위한 advice 구간 설정 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 트랜잭션 처리할 메소드 등록하기 -->
+		<tx:attributes>
+			<tx:method name="select*" rollback-for="Exception" read-only="true" />
+			<tx:method name="insert*" rollback-for="Exception" />
+			<tx:method name="update*" rollback-for="Exception" />
+			<tx:method name="delete*" rollback-for="Exception" />			
+		</tx:attributes>
+	</tx:advice>
+	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+      <property name="host" value="smtp.naver.com" />
+      <property name="port" value="587" />
+      <property name="username" value="cainchel357" />
+      <property name="password" value="illumination79!" />
+    
+
+      <!-- email 요청시는 SMTP -->
+      <property name="javaMailProperties">
+         <props>
+            <prop key="mail.transport.protocol">smtp</prop>
+            <prop key="mail.smtp.auth">true</prop>
+            <prop key="mail.smtp.starttls.enable">true</prop>
+            <prop key="mail.debug">true</prop>
+         </props>
+      </property>
+   </bean>
+	
+	
+</beans>

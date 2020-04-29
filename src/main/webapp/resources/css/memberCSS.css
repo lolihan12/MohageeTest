@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+span.guide{
+	display:none;
+	position : absolute;
+	font-size: 12px;
+	top: 230px;
+	right: 30px;
+}
+span.ok{
+	color:green;
+}
+
+span.error{
+	color:red;
+}

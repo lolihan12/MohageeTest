@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="index-mapper">
+	<select id="totalBoard" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BSTATUS = 'N'
+	</select>
+	
+	<select id="travelBoard" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BSTATUS = 'N' AND BKIND = 'T'
+	</select>
+	
+	<select id="gymBoard" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BSTATUS = 'N' AND BKIND = 'G'
+	</select>
+	
+	<select id="showBoard" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BSTATUS = 'N' AND BKIND = 'S'
+	</select>
+</mapper>

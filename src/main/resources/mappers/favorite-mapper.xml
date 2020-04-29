@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="favorite-mapper">
+
+	<select id="favoriteCount" resultType="int">
+		SELECT COUNT(*)
+		FROM FAVORITE
+		WHERE BNO = #{bNo} AND FSTATUS = 'Y'
+	</select>
+	
+	<select id="selectFavorite" parameterType="Favorite" resultType="Favorite">
+		SELECT * FROM FAVORITE
+		WHERE BNO = #{bNo} AND USERNO = #{userNo}
+	</select>
+	
+	<insert id="insertFavorite">
+		INSERT INTO FAVORITE VALUES(#{bNo}, #{userNo}, DEFAULT)
+	</insert>
+	
+	<update id="updateFavorite">
+		UPDATE FAVORITE SET FSTATUS = 'Y'
+		WHERE USERNO = #{userNo} AND BNO = #{bNo}
+	</update>
+	
+	<update id="cancelFavorite">
+		UPDATE FAVORITE SET FSTATUS = 'N'
+		WHERE USERNO = #{userNo} AND BNO = #{bNo}
+	</update>
+	
+	<select id="selectFavoriteList" resultType="FavoriteBoard">
+		SELECT B.*, A.BFILENAME TITLEFILENAME, A.BFILETYPE, (SELECT COUNT(*) FROM FAVORITE V WHERE B.BNO = V.BNO AND V.FSTATUS = 'Y') FAVORITECOUNT
+       	FROM FAVORITE F
+        JOIN BOARD B ON(F.BNO = B.BNO)
+        LEFT JOIN B_ATTACHMENT A ON(F.BNO = A.BNO AND A.BFILELEVEL = 0 AND BFILESTATUS= 'N')
+        WHERE F.USERNO = #{userNo} AND F.FSTATUS = 'Y' AND B.BSTATUS = 'N'
+	</select>
+	
+</mapper> 

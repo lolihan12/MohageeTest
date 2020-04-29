@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sbComment-mapper">
+
+	<select id="selectTotalContents" resultType="int">
+		SELECT COUNT(*) FROM BCOMMENT WHERE BSTATUS = 'N' 
+	</select>
+	
+	<select id="selectListsbComment" parameterType = "int" resultType="sbComment">
+		SELECT * FROM (SELECT C.*, M.NICKNAME, p.prenamedfilename
+						FROM BCOMMENT C
+						JOIN MEMBER M ON(C.USERNO = M.USERNO) 
+						LEFT JOIN PROFILEPHOTO P ON(M.USERNO = P.USERNO)
+						WHERE C.BCSTATUS = 'N' AND BNO = #{bNo}
+						ORDER BY BCDATE DESC)
+		START WITH BCLEVEL = 0 
+		CONNECT BY PRIOR BCNO = BBCNO
+	</select>
+
+	<!--  댓글 참조번호(bbcNo) 유무를 비교하여  없다면 원래대로, 있다면 참조 댓글 번호와 레벨 함께 지정하기 -->
+	<insert id="insertsbComment" parameterType="sbComment">
+		INSERT INTO BCOMMENT VALUES(SEQ_BCNO.NEXTVAL,
+									 #{bNo}, 
+									 #{userNo}, 
+									 #{bcContent}, 
+									 DEFAULT,
+									 
+		<if test = "bbcNo == 0">
+									DEFAULT,
+									DEFAULT,
+									DEFAULT)
+		</if><if test = "bbcNo != 0">
+									(SELECT BCLEVEL FROM BCOMMENT WHERE BCNO = #{bbcNo}) + 1,
+									 DEFAULT,
+									#{bbcNo})
+		</if>
+	</insert>
+	<update id="updatesbComment" parameterType="sbComment">
+		UPDATE BCOMMENT
+		<set>
+			<if test="bcContent != null">
+				BCCONTENT = #{bcContent},
+			</if>
+
+		</set>
+		WHERE BCNO = #{bcNo}
+		</update>
+		
+	<update id="deletesbComment" parameterType="int">
+		UPDATE BCOMMENT SET BCSTATUS = 'Y' WHERE BCNO = #{bcNo} OR BBCNO = #{bcNo}
+	</update>
+	
+	<select id="selectLastComment" parameterType="int" resultType="int">
+		SELECT MAX(BCNO) FROM BCOMMENT WHERE BBCNO IS NULL AND BNO = #{bNo}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ShowBoard-mapper">
+
+	<!--  게시글 작성  -->
+   <insert id="insertShowBoard" parameterType="ShowBoard">
+      INSERT INTO BOARD 
+      VALUES(SEQ_BNO.NEXTVAL, 
+         #{userNo},
+         #{bTitle},
+         #{bTag},
+         #{bContent},
+         #{cNo},
+         DEFAULT,
+         #{bUrl},
+         #{bCategory},
+         #{bKind},
+         #{bCount},
+         DEFAULT,
+         DEFAULT)
+   </insert>
+   
+   <!--  사진 작성 -->
+   <insert id="insertShowAttachment" parameterType="ShowAttachment">
+      <selectKey keyProperty="bNo" resultType="int" order="BEFORE">
+         SELECT SEQ_BNO.CURRVAL FROM DUAL
+      </selectKey>
+      INSERT INTO B_ATTACHMENT
+      VALUES (SEQ_BFILENO.NEXTVAL, 
+            #{bNo}, 
+            #{bFileName}, 
+            #{bFilePath},
+            DEFAULT, #{bFileLevel}, DEFAULT, 
+            #{bFileType})
+   </insert>
+   
+   <!--  게시글 리스트  -->
+   <select id="selectList" resultType="ShowBoard">
+      SELECT B.*, A.BFILENAME TITLEFILENAME, A.BFILETYPE, (SELECT COUNT(*) FROM FAVORITE F WHERE B.BNO = F.BNO AND F.FSTATUS = 'Y') FAVORITECOUNT,
+      (SELECT COUNT(*) FROM BCOMMENT C WHERE B.BNO = C.BNO AND C.BCSTATUS = 'N') COMMENTCOUNT
+      FROM BOARD B
+      LEFT JOIN B_ATTACHMENT A ON(B.BNO = A.BNO AND A.BFILELEVEL = 0 AND BFILESTATUS= 'N')
+      WHERE BSTATUS = 'N' AND BKIND = 'S'
+      ORDER BY BDATE DESC
+   </select>
+   
+   <!--  게시글 상세보기  -->
+   <select id="selectShowBoard" parameterType="_int" resultType="showBoard">
+		SELECT B.*, M.NICKNAME, M.INTRODUCE , P.PRENAMEDFILENAME,  C.CLAT, C.CLNG,
+		(SELECT COUNT(*) FROM BCOMMENT C WHERE B.BNO = C.BNO AND C.BCSTATUS = 'N') COMMENTCOUNT
+		FROM BOARD B
+		JOIN MEMBER M ON(B.USERNO = M.USERNO)
+		LEFT JOIN PROFILEPHOTO P ON(B.USERNO = P.USERNO)
+		JOIN COORDINATES C ON(B.CNO = C.CNO)
+		WHERE BNO = #{bNo}
+   </select>
+ 
+   <select id="selectShowAttachment" parameterType="int" resultType="ShowAttachment">
+      SELECT * FROM B_ATTACHMENT WHERE BNO = #{bNo} AND BFILESTATUS= 'N'
+   </select>
+   
+   <!--  게시글 수정하기 -->
+   <update id="updateShowBoard" parameterType="ShowBoard">
+      UPDATE BOARD
+      SET BTITLE = #{bTitle}, BTAG = #{bTag}, BCONTENT = #{bContent}, CNO = #{cNo}, BURL = #{bUrl}, 
+            BCATEGORY = #{bCategory}, BKIND = #{bKind}
+      WHERE BNO = #{bNo}
+   </update>
+   
+   <insert id="updateShowAttachment" parameterType="ShowAttachment">
+      INSERT INTO B_ATTACHMENT
+      VALUES (SEQ_BFILENO.NEXTVAL, #{bNo}, 
+            #{bFileName}, #{bFilePath},
+            DEFAULT, #{bFileLevel}, DEFAULT, 
+            #{bFileType})
+   </insert>
+   
+   <!--  게시글 삭제 -->
+ <update id="deleteShowBoard" parameterType="int">
+      UPDATE BOARD
+      SET BSTATUS= 'Y'
+      WHERE BNO = #{bNo}
+   </update>
+   
+   <update id="deleteShowAttachment" parameterType="int">
+      UPDATE B_ATTACHMENT
+      SET BFILESTATUS= 'Y'
+      WHERE BNO = #{bNo}
+   </update>
+   
+   <update id="deleteShowFile" parameterType="int">
+      UPDATE B_ATTACHMENT
+      SET BFILESTATUS= 'Y'
+      WHERE BFILENO = #{attNo}
+   </update>
+   
+   <select id="selectOne" parameterType="int" resultType="ShowAttachment">
+         SELECT * FROM B_ATTACHMENT WHERE BFILENO= #{attNo}
+   </select>
+   
+   <update id="updateTitleImage" parameterType="int">
+   <![CDATA[
+   	UPDATE B_ATTACHMENT SET BFILELEVEL = 0
+	WHERE BFILENO = (
+		select BFILENO FROM B_ATTACHMENT
+		WHERE BNO = #{bNo}
+		    AND BFILELEVEL = 1
+		    AND ROWNUM < 2)
+	]]>
+   </update>
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+

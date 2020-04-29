@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
+
+
+	<!-- 
+		만들어진 웹소켓 핸들러 객체와 실제 경로를 연결(mapping) 해주는 설정
+		view(chatting.jsp) 에서 socketJS를 생성 시에 경로가
+		아래 작성한 경로와 같도록 구현한다.
+	  -->
+	  
+	  <bean id="myHandler" class="com.kh.mohagee.chat.websocket.WSocketHandler"/>
+	  
+	  <websocket:handlers>
+	  	<websocket:mapping handler="myHandler" path="/chatting"/>
+	  	<!-- 서버의 session 영역을 웹소켓 영역과 함께 사용하는 인터셉터 설정하기 -->
+	  	<websocket:handshake-interceptors>
+	  		<bean class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor" />	
+	  	</websocket:handshake-interceptors>
+	  	<!-- sockJS 사용하기 -->
+	  	<websocket:sockjs/>
+	  	
+	  </websocket:handlers>
+
+</beans>

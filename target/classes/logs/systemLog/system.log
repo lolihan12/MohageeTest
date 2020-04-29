@@ -1,0 +1,213 @@
+INFO :[2020-01-08 16:04:57] Root WebApplicationContext: initialization started
+INFO :[2020-01-08 16:04:58] Root WebApplicationContext initialized in 1876 ms
+INFO :[2020-01-08 16:04:59] Initializing Servlet 'appServlet'
+INFO :[2020-01-08 16:05:02] Completed initialization in 3788 ms
+INFO :[2020-01-08 16:06:01] Root WebApplicationContext: initialization started
+INFO :[2020-01-08 16:06:03] Root WebApplicationContext initialized in 1731 ms
+INFO :[2020-01-08 16:06:03] Initializing Servlet 'appServlet'
+INFO :[2020-01-08 16:06:07] Completed initialization in 3555 ms
+INFO :[2020-01-08 16:09:44] Root WebApplicationContext: initialization started
+INFO :[2020-01-08 16:09:46] Root WebApplicationContext initialized in 1816 ms
+INFO :[2020-01-08 16:09:46] Initializing Servlet 'appServlet'
+INFO :[2020-01-08 16:09:50] Completed initialization in 3773 ms
+INFO :[2020-01-08 16:12:14] Root WebApplicationContext: initialization started
+INFO :[2020-01-08 16:12:15] Root WebApplicationContext initialized in 1721 ms
+INFO :[2020-01-08 16:12:15] Initializing Servlet 'appServlet'
+INFO :[2020-01-08 16:12:19] Completed initialization in 3575 ms
+INFO :[2020-01-08 16:13:52] Root WebApplicationContext: initialization started
+INFO :[2020-01-08 16:13:53] Root WebApplicationContext initialized in 1751 ms
+INFO :[2020-01-08 16:13:54] Initializing Servlet 'appServlet'
+INFO :[2020-01-08 16:13:57] Completed initialization in 3577 ms
+INFO :[2020-01-08 16:33:25] Root WebApplicationContext: initialization started
+INFO :[2020-01-08 16:33:27] Root WebApplicationContext initialized in 1861 ms
+INFO :[2020-01-08 16:33:27] Initializing Servlet 'appServlet'
+INFO :[2020-01-08 16:33:31] Completed initialization in 3829 ms
+INFO :[2020-01-08 16:38:06] Root WebApplicationContext: initialization started
+INFO :[2020-01-08 16:38:08] Root WebApplicationContext initialized in 1792 ms
+INFO :[2020-01-08 16:38:08] Initializing Servlet 'appServlet'
+INFO :[2020-01-08 16:38:12] Completed initialization in 4030 ms
+INFO :[2020-01-23 09:51:35] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 09:51:39] Root WebApplicationContext initialized in 4212 ms
+INFO :[2020-01-23 09:51:39] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 09:51:50] Completed initialization in 10288 ms
+WARN :[2020-01-23 09:59:28] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:11:55] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:15:30] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:16:40] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:18:34] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:19:41] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:20:59] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:21:51] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:26:18] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:27:11] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:28:10] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:28:50] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:30:14] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:30:37] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:30:51] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:32:21] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:36:08] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:36:19] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:36:25] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:36:57] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:38:18] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:39:59] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:40:09] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:40:10] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:40:16] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:41:41] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:42:52] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:43:38] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:43:40] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:43:51] Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required int parameter 'tno' is not present]
+WARN :[2020-01-23 10:45:32] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:47:47] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:48:11] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:48:19] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:48:34] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:48:38] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:49:29] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:49:52] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:50:25] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:50:33] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:50:39] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:50:40] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:51:10] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:56:54] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:57:57] No mapping for GET /mohagee/tComment/tCommentSelectList.do
+WARN :[2020-01-23 10:58:54] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:59:03] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:59:13] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 10:59:18] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:02:22] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:02:37] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:02:38] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:02:44] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:02:46] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:02:53] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:02:59] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:03:15] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:04:16] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:04:41] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:04:54] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:05:01] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:05:25] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:05:46] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 11:10:29] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+INFO :[2020-01-23 11:28:48] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 11:28:52] Root WebApplicationContext initialized in 4807 ms
+INFO :[2020-01-23 11:28:53] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 11:29:04] Completed initialization in 11076 ms
+WARN :[2020-01-23 11:51:40] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+INFO :[2020-01-23 12:05:25] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:05:30] Root WebApplicationContext initialized in 4525 ms
+INFO :[2020-01-23 12:05:30] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:05:40] Completed initialization in 9913 ms
+WARN :[2020-01-23 12:07:02] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:08:25] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'travelBoard' on field 'userNo': rejected value []; codes [typeMismatch.travelBoard.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [travelBoard.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 12:08:39] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'travelBoard' on field 'userNo': rejected value []; codes [typeMismatch.travelBoard.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [travelBoard.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 12:08:45] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'travelBoard' on field 'userNo': rejected value []; codes [typeMismatch.travelBoard.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [travelBoard.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+INFO :[2020-01-23 12:21:58] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:22:02] Root WebApplicationContext initialized in 4146 ms
+INFO :[2020-01-23 12:22:02] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:22:13] Completed initialization in 10287 ms
+INFO :[2020-01-23 12:26:39] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:26:43] Root WebApplicationContext initialized in 4027 ms
+INFO :[2020-01-23 12:26:44] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:26:53] Completed initialization in 9133 ms
+WARN :[2020-01-23 12:27:47] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'travelBoard' on field 'userNo': rejected value []; codes [typeMismatch.travelBoard.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [travelBoard.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 12:27:52] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'travelBoard' on field 'userNo': rejected value []; codes [typeMismatch.travelBoard.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [travelBoard.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+INFO :[2020-01-23 12:28:11] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:28:15] Root WebApplicationContext initialized in 4197 ms
+INFO :[2020-01-23 12:28:15] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:28:25] Completed initialization in 9447 ms
+INFO :[2020-01-23 12:29:17] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:29:21] Root WebApplicationContext initialized in 4270 ms
+INFO :[2020-01-23 12:29:22] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:29:31] Completed initialization in 9163 ms
+INFO :[2020-01-23 12:30:55] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:30:59] Root WebApplicationContext initialized in 4115 ms
+INFO :[2020-01-23 12:30:59] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:31:08] Completed initialization in 9479 ms
+INFO :[2020-01-23 12:34:11] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:34:15] Root WebApplicationContext initialized in 4274 ms
+INFO :[2020-01-23 12:34:15] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:34:26] Completed initialization in 10106 ms
+WARN :[2020-01-23 12:34:34] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+INFO :[2020-01-23 12:34:54] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:34:58] Root WebApplicationContext initialized in 4237 ms
+INFO :[2020-01-23 12:34:59] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:35:09] Completed initialization in 10156 ms
+INFO :[2020-01-23 12:36:09] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:36:13] Root WebApplicationContext initialized in 4102 ms
+INFO :[2020-01-23 12:36:13] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:36:22] Completed initialization in 9208 ms
+INFO :[2020-01-23 12:37:45] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:37:49] Root WebApplicationContext initialized in 4070 ms
+INFO :[2020-01-23 12:37:49] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:37:59] Completed initialization in 9405 ms
+WARN :[2020-01-23 12:41:52] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 12:41:52] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:42:04] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:42:09] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:42:41] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:43:02] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:51:41] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 12:51:48] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:52:17] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:53:13] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 12:53:27] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+INFO :[2020-01-23 12:57:43] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 12:57:47] Root WebApplicationContext initialized in 4013 ms
+INFO :[2020-01-23 12:57:47] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 12:57:57] Completed initialization in 10196 ms
+INFO :[2020-01-23 13:38:26] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 13:38:30] Root WebApplicationContext initialized in 4095 ms
+INFO :[2020-01-23 13:38:30] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 13:38:40] Completed initialization in 9707 ms
+INFO :[2020-01-23 13:45:02] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 13:45:06] Root WebApplicationContext initialized in 4290 ms
+INFO :[2020-01-23 13:45:07] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 13:45:16] Completed initialization in 9856 ms
+WARN :[2020-01-23 13:58:35] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 14:01:38] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+INFO :[2020-01-23 14:04:46] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 14:04:50] Root WebApplicationContext initialized in 4086 ms
+INFO :[2020-01-23 14:04:50] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 14:04:59] Completed initialization in 9225 ms
+WARN :[2020-01-23 14:05:25] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 14:05:50] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 14:19:47] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 14:19:52] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 14:19:57] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 14:28:09] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 14:28:28] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 14:29:13] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 14:29:13] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 14:29:23] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+WARN :[2020-01-23 14:29:28] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'favorite' on field 'userNo': rejected value []; codes [typeMismatch.favorite.userNo,typeMismatch.userNo,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [favorite.userNo,userNo]; arguments []; default message [userNo]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'userNo'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+INFO :[2020-01-23 14:37:00] Root WebApplicationContext: initialization started
+INFO :[2020-01-23 14:37:04] Root WebApplicationContext initialized in 3997 ms
+INFO :[2020-01-23 14:37:05] Initializing Servlet 'appServlet'
+INFO :[2020-01-23 14:37:14] Completed initialization in 9717 ms
+WARN :[2020-01-23 15:29:33] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 15:29:35] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 15:31:27] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 15:31:35] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 15:31:38] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 15:32:00] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do
+WARN :[2020-01-23 15:32:01] No mapping for GET /mohagee/sbComment/sbCommentSelectList.do

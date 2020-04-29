@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tcomment-mapper">
+	
+	<select id="selectTotalContents" resultType="int">
+		SELECT COUNT(*) FROM TCOMMENT WHERE TSTATUS = 'N' 
+	</select>
+	
+	<select id="selectListtContent" parameterType = "int" resultType="tComment">
+		SELECT * FROM (SELECT C.*, M.NICKNAME, p.prenamedfilename
+						FROM TCOMMENT C
+						JOIN MEMBER M ON(C.USERNO = M.USERNO) 
+						LEFT JOIN PROFILEPHOTO P ON(M.USERNO = P.USERNO)
+						WHERE C.TCSTATUS = 'N' AND TNO = #{tno}
+						ORDER BY TCDATE DESC)
+		START WITH TCLEVEL = 0 
+		CONNECT BY PRIOR TCNO = TTCNO
+	</select>
+
+	<!--  댓글 참조번호(bbcNo) 유무를 비교하여  없다면 원래대로, 있다면 참조 댓글 번호와 레벨 함께 지정하기 -->
+	<insert id="insertgbComment" parameterType="tComment">
+		INSERT INTO TCOMMENT VALUES(SEQ_TCNO.NEXTVAL,
+									 #{tno}, 
+									 #{userNo}, 
+									 #{tcContent}, 
+									 DEFAULT,
+									 
+		<if test = "ttcNo == 0">
+									DEFAULT,
+									DEFAULT,
+									DEFAULT)
+		</if><if test = "ttcNo != 0">
+									(SELECT TCLEVEL FROM TCOMMENT WHERE TCNO = #{ttcNo}) + 1,
+									 DEFAULT,
+									#{ttcNo})
+		</if>
+	</insert>
+	<update id="updatetComment" parameterType="tComment">
+		UPDATE TCOMMENT
+		<set>
+			<if test="tContent != null">
+				TCCONTENT = #{tcContent},
+			</if>
+
+		</set>
+		WHERE TCNO = #{tcNo}
+		</update>
+		
+	<update id="deletetComment" parameterType="int">
+		UPDATE TCOMMENT SET TCSTATUS = 'Y' WHERE TCNO = #{tcNo} OR BBCNO = #{tcno}
+	</update>
+	
+	<select id="selectLastComment" parameterType="int" resultType="int">
+		SELECT MAX(BCNO) FROM TCOMMENT WHERE TTCNO IS NULL AND TNO = #{tno}
+	</select>
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+

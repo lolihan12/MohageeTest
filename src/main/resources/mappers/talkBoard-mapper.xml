@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="talkBoard-mapper">
+   
+   <select id="selectList" resultType="Talk">
+     SELECT T.*, A.TFILENAME TITLEFILENAME, A.TFILETYPE
+     FROM TALK T
+      LEFT JOIN T_ATTACHMENT A ON(T.TNO = A.TNO AND A.TFILELEVEL = 0 AND TFILESTATUS = 'N') 
+      WHERE TSTATUS = 'N' ORDER BY TDATE DESC
+   </select>
+   
+   <insert id="insertTalk" parameterType="Talk">
+     INSERT INTO TALK 
+      VALUES(SEQ_TNO.NEXTVAL, 
+            #{tWriter}, #{tTitle}, #{tContent},
+             DEFAULT, DEFAULT, DEFAULT)
+   </insert>
+   
+   <insert id="insertAttachment" parameterType="TalkAttachment">
+      <selectKey keyProperty="tno" resultType="int" order="BEFORE">
+         SELECT SEQ_TNO.CURRVAL FROM DUAL
+         </selectKey>
+         INSERT INTO T_ATTACHMENT
+         VALUES (SEQ_TFILENO.NEXTVAL, 
+               #{tno}, #{tFileName}, #{tFilePath},
+               DEFAULT, #{tFileLevel}, DEFAULT, #{tFileType})
+   </insert>
+   
+   <select id="selectTalk" parameterType="_int" resultType="Talk">
+      SELECT * FROM TALK WHERE TNO = #{tno}
+   </select>
+   
+   <select id="selectAttachment" parameterType="int" resultType="TalkAttachment">
+      SELECT * FROM T_ATTACHMENT WHERE TNO = #{tno} AND TFILESTATUS = 'N'
+   </select>
+   
+   <update id="updateBoard" parameterType="Talk">
+      UPDATE TALK
+      SET TTITLE = #{tTitle},
+          TCONTENT = #{tContent}
+      WHERE TNO = #{tno}
+   </update>
+   
+   <insert id="updateAttachment" parameterType="TalkAttachment">
+      INSERT INTO T_ATTACHMENT
+      VALUES (SEQ_TFILENO.NEXTVAL, #{tno}, 
+            #{tFileName}, 
+            #{tFilePath},
+            DEFAULT, DEFAULT, DEFAULT, #{tFileType})
+   </insert>
+   
+   <update id="deleteTalk" parameterType="int">
+      UPDATE TALK SET TSTATUS = 'Y' WHERE TNO = #{tno}
+   </update>
+   
+   <update id="deleteTalkAttachment">
+      UPDATE T_ATTACHMENT
+      SET TFILESTATUS = 'Y'
+      WHERE TNO = #{tno}
+   </update>
+</mapper>
+
+
+
+
+
+
+
+
+

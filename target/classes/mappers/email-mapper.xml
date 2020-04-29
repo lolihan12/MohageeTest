@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="email-mapper">
+	<select id="checkEmail" parameterType="string" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE USERID = #{email}
+	</select>
+	
+	<insert id="insertCheckNumber" parameterType="Email">
+		INSERT INTO USEREMAILCHECK VALUES(#{email}, #{key})
+	</insert>
+	
+	<update id="emailConfirm">
+		<![CDATA[
+		  UPDATE MEMBER 
+		  SET EMAILCHECK = 1 
+		  WHERE (SELECT COUNT(*) 
+		              FROM USEREMAILCHECK 
+		              WHERE USERID = #{email}
+		                  AND CHECKNUM = #{key}) > 0
+		    AND USERID = #{email}
+		]]>
+	</update>
+	
+	<delete id="emailConfirmDelete" parameterType="Email">
+		DELETE FROM USEREMAILCHECK WHERE USERID = #{email} AND CHECKNUM = #{key}
+	</delete>
+</mapper>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member-mapper">
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER
+		VALUES (SEQ_USERNO.NEXTVAL, #{userId}, #{password}, 
+				#{userName}, #{nickName}, #{phone}, DEFAULT,
+				DEFAULT, DEFAULT, DEFAULT, DEFAULT)
+	</insert>
+	
+	<select id="selectNickName" parameterType="string" resultType="Member">
+		SELECT * FROM MEMBER WHERE USERID = #{userId}
+	</select>
+	
+	<select id="selectOneMember" parameterType="Member" resultType="Member">
+		SELECT * FROM MEMBER WHERE USERID = #{userId}
+	</select>
+	
+	<select id="selectFindEmail" parameterType="Member" resultType="string">
+		SELECT USERID FROM MEMBER WHERE USERNAME = #{userName} AND PHONE = #{phone}
+	</select>
+	
+	<update id="updateConfirm" parameterType="string">
+		UPDATE MEMBER SET EMAILCHECK = 0 WHERE USERID = #{email}
+	</update>
+	
+	<select id="selectFindPassword" parameterType="Member" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE USERID = #{userId} 
+		AND USERNAME = #{userName} AND PHONE = #{phone}
+	</select>
+	
+	<update id="updateTemPass">
+		UPDATE MEMBER SET PASSWORD = #{password} WHERE USERID = #{userId}
+	</update>
+	
+	<select id="selectMyPage" parameterType="int" resultType="Member">
+		SELECT USERNO, NICKNAME, INTRODUCE, USERGRADE FROM MEMBER WHERE USERNO = #{userNo} AND STATUS = 'N'
+	</select>
+	
+	<update id="updateMember" parameterType="Member">
+		UPDATE MEMBER
+		<set>
+			<if test = "introduce != null">
+				INTRODUCE = #{introduce},
+			</if>
+			<if test = "password != null">
+				PASSWORD = #{password},
+			</if>
+			<if test = "userName != null">
+				USERNAME = #{userName},
+			</if>
+			<if test = "nickName != null">
+				NICKNAME = #{nickName},
+			</if>
+			<if test = "phone != null">
+				PHONE = #{phone},
+			</if>
+		</set>
+		WHERE USERNO = #{userNo}
+	</update>
+	<select id="selectProfile" parameterType="int" resultType="Profile">
+		SELECT * FROM PROFILEPHOTO WHERE USERNO = #{userNo}
+	</select>
+	
+	<delete id="deleteProfile">
+		DELETE FROM PROFILEPHOTO WHERE USERNO = #{userNo}
+	</delete>
+	
+	<insert id="updateProfile">
+		INSERT INTO PROFILEPHOTO VALUES(SEQ_PNO.NEXTVAL, #{userNo}, #{pOriginalFileName}, #{pRenamedFileName}, #{pFilePath}, DEFAULT,DEFAULT)
+	</insert>
+	
+	<select id="selectMyBoardList" resultType="FavoriteBoard">
+		SELECT B.*, A.BFILENAME TITLEFILENAME, A.BFILETYPE, (SELECT COUNT(*) FROM FAVORITE F WHERE B.BNO = F.BNO AND F.FSTATUS = 'Y') FAVORITECOUNT
+       	FROM BOARD B
+		LEFT JOIN B_ATTACHMENT A ON(B.BNO = A.BNO AND A.BFILELEVEL = 0 AND BFILESTATUS = 'N')
+		WHERE B.USERNO = #{userNo} AND B.BSTATUS = 'N'
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
